@@ -12,21 +12,143 @@
 
 <body>
   <main class="home">
-    <img 
-      src="assets/logo/nxlife-toon-logo.png" 
-      alt="NxLife'Toon Logo" 
-      class="main-logo"
-    >
 
-    <h1>NxLife'Toon</h1>
+    <!-- HERO -->
+    <section class="hero-modern">
+      <div class="hero-bg-shape shape-one"></div>
+      <div class="hero-bg-shape shape-two"></div>
+      <div class="hero-bg-shape shape-three"></div>
 
-    <p class="subtitle">
-      การ์ตูนเล่าเรื่องชีวิต ความเชื่อ และชุมชนออนไลน์ของ NxLife
-    </p>
+      <div class="hero-content">
+        <div class="hero-label">
+          ✨ Webtoon Studio
+        </div>
 
-<a href="episodes/ep01/" class="read-button">
-  อ่านตอนที่ 1
-</a>
+        <img
+          src="assets/logo/nxlife-toon-logo.png"
+          alt="NxLife'Toon Logo"
+          class="main-logo"
+        >
+
+        <h1>ยินดีต้อนรับสู่ NxLife'Toon</h1>
+
+        <p class="subtitle">
+          การ์ตูนเล่าเรื่องชีวิต ความเชื่อ และชุมชนออนไลน์ของ NxLife
+          ผ่านบทสนทนาที่อ่านง่าย อบอุ่น และชวนยิ้ม
+        </p>
+
+        <div class="hero-actions">
+          <a href="episodes/ep01/" class="primary-button">
+            เริ่มอ่านตอนแรก
+          </a>
+
+          <a href="#bookshelf" class="secondary-button">
+            ดูชั้นหนังสือ
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHIPS -->
+    <section class="intro-chips">
+      <span>🌱 อ่านง่าย</span>
+      <span>💬 คุยแบบอบอุ่น</span>
+      <span>📖 เรื่องราวของ NxLife</span>
+      <span>✨ ความเชื่อ ชีวิต และชุมชน</span>
+    </section>
+
+    <!-- BOOKSHELF -->
+    <section class="bookshelf-section" id="bookshelf">
+      <div class="section-header">
+        <span class="section-kicker">ชั้นหนังสือ</span>
+        <h2>เลือกตอนที่อยากอ่าน</h2>
+        <p>
+          เริ่มจากเรื่องราวง่าย ๆ ที่จะช่วยให้รู้จัก NxLife มากขึ้น
+          ผ่านยัยจอย เฮียปุ่ม และพี่แจ๊ค
+        </p>
+      </div>
+
+      <div class="category-row">
+        <span class="category-pill active">🌱 รู้จัก NxLife</span>
+        <span class="category-pill">💛 ชีวิตความเชื่อ</span>
+        <span class="category-pill">🏡 ชุมชนและการดูแล</span>
+      </div>
+
+      <div class="episode-grid">
+
+        <!-- EP01 -->
+        <article class="episode-card featured-card">
+          <div class="episode-cover cover-ep01">
+            <div class="cover-top">
+              <span class="cover-badge">EP01</span>
+              <span class="cover-status">พร้อมอ่าน</span>
+            </div>
+
+            <div class="cover-art">
+              <div class="comic-bubble">ถามได้ไหม?</div>
+              <div class="cover-icon">🌱</div>
+              <div class="cover-title-small">NxLife คืออะไร?</div>
+            </div>
+          </div>
+
+          <div class="episode-content">
+            <p class="episode-category">รู้จัก NxLife</p>
+
+            <h3>NxLife คืออะไรกันแน่?</h3>
+
+            <p class="episode-desc">
+              เมื่อยัยจอยสงสัยว่า NxLife เป็นโบสถ์ออนไลน์
+              กลุ่มแชต หรืออะไรกันแน่ เฮียปุ่มเลยต้องอธิบาย
+              แบบง่ายที่สุด พร้อมพี่แจ๊คที่คอยแทรกมุกไม่ให้จริงจังเกินไป
+            </p>
+
+            <a href="episodes/ep01/" class="read-button">
+              อ่านตอนนี้
+            </a>
+          </div>
+        </article>
+
+        <!-- EP02 -->
+        <article class="episode-card coming-soon">
+          <div class="episode-cover cover-soft">
+            <div class="cover-top">
+              <span class="cover-badge">EP02</span>
+              <span class="cover-status soft">เร็ว ๆ นี้</span>
+            </div>
+
+            <div class="cover-art">
+              <div class="comic-bubble pale">Coming Soon</div>
+              <div class="cover-icon">✨</div>
+              <div class="cover-title-small">ตอนใหม่กำลังมา</div>
+            </div>
+          </div>
+
+          <div class="episode-content">
+            <p class="episode-category">เร็ว ๆ นี้</p>
+
+            <h3>ตอนใหม่กำลังมา</h3>
+
+            <p class="episode-desc">
+              เตรียมพบกับเรื่องราวใหม่ของ NxLife'Toon
+              ที่จะเล่าเรื่องชีวิต ความเชื่อ และชุมชนออนไลน์
+              ให้อ่านง่ายและอบอุ่นเหมือนนั่งคุยกัน
+            </p>
+
+            <span class="disabled-button">
+              Coming Soon
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="soft-footer">
+      <p>
+        เริ่มจากตอนแรก แล้วค่อย ๆ เดินทางไปด้วยกันในโลกของ NxLife'Toon
+      </p>
+    </section>
+
   </main>
 </body>
 </html>
