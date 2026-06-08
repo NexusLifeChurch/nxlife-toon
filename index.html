@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
   <main class="app-shell">
 
@@ -53,9 +54,9 @@
           <b>พร้อมอ่าน</b>
         </div>
 
-        <div class="latest-cover">
-          <img src="assets/logo/nxlife-toon-logo.png" alt="NxLife'Toon">
-        </div>
+<div class="latest-cover">
+  <img src="assets/covers/ep01-cover.png" alt="EP01 NxLife คืออะไรกันแน่">
+</div>
 
         <div class="latest-card-body">
           <p>รู้จัก NxLife</p>
@@ -89,47 +90,14 @@
         <button>🎉 ค่าย / กิจกรรม</button>
       </div>
 
-      <div class="episode-list">
-
-        <article class="book-card">
-          <div class="book-cover orange-cover">
-            <span class="book-ep">EP01</span>
-            <div class="book-icon">🌱</div>
-            <strong>NxLife คืออะไร?</strong>
-          </div>
-
-          <div class="book-info">
-            <span class="book-status">พร้อมอ่าน</span>
-            <h3>NxLife คืออะไรกันแน่?</h3>
-            <p>
-              เมื่อยัยจอยสงสัยว่า NxLife เป็นโบสถ์ออนไลน์ กลุ่มแชต
-              หรืออะไรกันแน่ เฮียปุ่มเลยต้องอธิบายแบบง่ายที่สุด
-            </p>
-            <a href="episodes/ep01/" class="read-button">อ่านตอนนี้</a>
-          </div>
-        </article>
-
-        <article class="book-card muted">
-          <div class="book-cover pastel-cover">
-            <span class="book-ep">EP02</span>
-            <div class="book-icon">✨</div>
-            <strong>ตอนใหม่</strong>
-          </div>
-
-          <div class="book-info">
-            <span class="book-status soft">เร็ว ๆ นี้</span>
-            <h3>ตอนใหม่กำลังมา</h3>
-            <p>
-              เตรียมพบกับเรื่องราวใหม่ของ NxLife'Toon
-              ที่จะเล่าเรื่องชีวิต ความเชื่อ และชุมชนออนไลน์
-            </p>
-            <span class="disabled-button">Coming Soon</span>
-          </div>
-        </article>
+<div class="episode-list" id="episodeList"></div>
 
       </div>
     </section>
 
   </main>
+
+  <script src="episodes-data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
