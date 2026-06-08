@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EP01 - NxLife คืออะไรกันแน่?</title>
+
+  <link rel="icon" type="image/png" href="../../assets/logo/favicon.png">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body class="reader-page">
+
+  <header class="reader-header">
+    <a href="../../index.html" class="back-link">← กลับหน้าแรก</a>
+    <div class="episode-label">EP01</div>
+    <h1>NxLife คืออะไรกันแน่?</h1>
+  </header>
+
+  <main class="webtoon-reader" id="webtoonReader"></main>
+
+  <section class="episode-end">
+    <h2>อ่านจบแล้ว 🎉</h2>
+    <p>ขอบคุณที่ร่วมเดินทางไปกับ NxLife'Toon</p>
+
+    <a href="../../index.html" class="read-button">
+      กลับไปเลือกตอน
+    </a>
+  </section>
+
+  <script>
+    const totalImages = 12; // ถ้ามีมากกว่า 10 รูป ให้แก้เลขตรงนี้ เช่น 12, 15, 18
+    const reader = document.getElementById("webtoonReader");
+
+    for (let i = 1; i <= totalImages; i++) {
+      const img = document.createElement("img");
+      const fileName = String(i).padStart(2, "0") + ".jpg";
+
+      img.src = "images/" + fileName;
+      img.alt = "NxLife'Toon EP01 ภาพที่ " + i;
+      img.loading = "lazy";
+
+      reader.appendChild(img);
+    }
+  </script>
+
+</body>
+</html>

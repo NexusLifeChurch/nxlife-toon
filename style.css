@@ -46,3 +46,72 @@ h1 {
   font-weight: bold;
   box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
 }
+
+.reader-page {
+  background: #fff7ed;
+  padding: 0;
+}
+
+.reader-header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 18px 16px 22px;
+  text-align: center;
+  background: #fff7ed;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #c06428;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.episode-label {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #fed7aa;
+  color: #9a3412;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.reader-header h1 {
+  margin: 12px 0 0;
+  font-size: 26px;
+  color: #3b2f2f;
+}
+
+.webtoon-reader {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.webtoon-reader img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.episode-end {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 36px 20px 56px;
+  text-align: center;
+  background: #fff7ed;
+}
+
+.episode-end h2 {
+  margin: 0 0 10px;
+  color: #c06428;
+}
+
+.episode-end p {
+  margin: 0 0 24px;
+  color: #5f4636;
+}
