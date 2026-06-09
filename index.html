@@ -10,11 +10,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
   <main class="app-shell">
 
-    <!-- TOP NAV -->
     <header class="top-nav">
       <a href="index.html" class="brand">
         <img src="assets/logo/favicon.png" alt="NxLife Logo">
@@ -22,77 +20,60 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#latest">ตอนล่าสุด</a>
-        <a href="#bookshelf">ชั้นหนังสือ</a>
+        <a href="#featured">หนังสือแนะนำ</a>
+        <a href="#rooms">ห้องหนังสือ</a>
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero-v2" id="latest">
-      <div class="hero-copy">
-        <div class="eyebrow">🌱 New Episode</div>
+    <section class="home-house">
+      <div class="house-copy">
+        <div class="eyebrow">🏡 บ้านแห่งเรื่องราว</div>
 
         <h1>
-          โลกการ์ตูนอบอุ่น<br>
-          ของ NxLife
+          ยินดีต้อนรับ<br>
+          สู่บ้าน NxLife'Toon
         </h1>
 
         <p>
-          อ่านเรื่องราวชีวิต ความเชื่อ และชุมชนออนไลน์
-          ผ่านยัยจอย เฮียปุ่ม และพี่แจ๊ค แบบสนุก อ่านง่าย และชวนคิด
+          บ้านเล็ก ๆ ที่รวบรวมเรื่องราวชีวิต ความเชื่อ และชุมชนออนไลน์ของ NxLife
+          ผ่านหนังสือการ์ตูนที่อ่านง่าย อบอุ่น และชวนยิ้ม
         </p>
 
         <div class="hero-buttons">
-          <a href="episodes/ep01/" class="primary-button">เริ่มอ่าน EP01</a>
-          <a href="#bookshelf" class="ghost-button">เลือกจากชั้นหนังสือ</a>
+          <a href="#featured" class="primary-button">เปิดหนังสือแนะนำ</a>
+          <a href="#rooms" class="ghost-button">เดินดูห้องหนังสือ</a>
         </div>
       </div>
 
-      <a href="episodes/ep01/" class="latest-card">
-        <div class="latest-card-top">
-          <span>EP01</span>
-          <b>พร้อมอ่าน</b>
-        </div>
-
-<div class="latest-cover">
-  <img src="assets/covers/ep01-cover.png" alt="EP01 NxLife คืออะไรกันแน่">
+      <div class="house-visual">
+<div class="house-window">
+  <img src="assets/hero/home-hero.jpg" alt="บรรยากาศบ้าน NxLife'Toon">
 </div>
 
-        <div class="latest-card-body">
-          <p>รู้จัก NxLife</p>
-          <h2>NxLife คืออะไรกันแน่?</h2>
-          <span>แตะเพื่ออ่านตอนนี้ →</span>
+        <div class="house-note">
+          “แวะเข้ามานั่งอ่านเรื่องราวของบ้านเรา”
         </div>
-      </a>
+      </div>
     </section>
 
-    <!-- QUICK TAGS -->
-    <section class="quick-tags">
-      <span>💬 อ่านง่ายเหมือนนั่งคุย</span>
-      <span>✨ สนุก อบอุ่น ชวนยิ้ม</span>
-      <span>📖 เล่าเรื่องชุมชนและความเชื่อ</span>
+    <section class="featured-section" id="featured">
+      <div class="section-title">
+        <p>Featured Book</p>
+        <h2>หนังสือแนะนำบนโต๊ะกลาง</h2>
+        <span>ตอนล่าสุด / ตอนที่อยากชวนเริ่มอ่านก่อน</span>
+      </div>
+
+      <div id="featuredBooks" class="featured-books"></div>
     </section>
 
-    <!-- BOOKSHELF -->
-    <section class="bookshelf-v2" id="bookshelf">
-      <div class="shelf-title">
-        <div>
-          <p>Bookshelf</p>
-          <h2>ชั้นหนังสือ NxLife'Toon</h2>
-        </div>
-        <span>เลือกตอนที่อยากอ่าน</span>
+    <section class="rooms-section" id="rooms">
+      <div class="section-title">
+        <p>Rooms</p>
+        <h2>เลือกห้องหนังสือ</h2>
+        <span>แต่ละห้องจะพาไปเจอเรื่องราวคนละมุมของบ้าน NxLife</span>
       </div>
 
-      <div class="category-strip">
-        <button class="active">🌱 รู้จัก NxLife</button>
-        <button>💛 ชีวิตความเชื่อ</button>
-        <button>🏡 ชุมชนและการดูแล</button>
-        <button>🎉 ค่าย / กิจกรรม</button>
-      </div>
-
-<div class="episode-list" id="episodeList"></div>
-
-      </div>
+      <div id="roomGrid" class="room-grid"></div>
     </section>
 
   </main>
