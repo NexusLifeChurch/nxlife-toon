@@ -97,10 +97,37 @@ const episodes = [
     shelfId: "know-nxlife",
     description: "ชวนรู้จัก NxLife แบบง่าย ๆ ผ่านยัยจอย เฮียปุ่ม และพี่แจ็ค",
     cover: "assets/covers/ep01-cover.jpg",
-    url: "episodes/ep01/",
+    url: "episodes/ep01/index.html",
     status: "available",
     statusText: "พร้อมอ่าน",
     featured: true,
     sortOrder: 1
-  }
+  },
+  {
+  ep: "EP02",
+  title: "เรื่องทดลอง",
+  roomId: "must-know",
+  shelfId: "know-nxlife",
+  description: "เรื่องนี้ใส่ไว้ทดสอบระบบก่อน",
+  cover: "assets/covers/ep01-cover.png",
+  url: "episodes/ep02/index.html",
+  status: "coming-soon",
+  statusText: "เร็ว ๆ นี้",
+  featured: false,
+  sortOrder: 2
+},
+{
+  ep: "EP03",
+  title: "เรื่องทดลอง",
+  roomId: "must-know",
+  shelfId: "know-nxlife",
+  description: "เรื่องนี้ใส่ไว้ทดสอบระบบก่อน2",
+  cover: "assets/covers/ep01-cover.png",
+  url: "episodes/ep03/index.html",
+  status: "coming-soon",
+  statusText: "เร็ว ๆ นี้",
+  featured: false,
+  sortOrder: 2
+}
+
 ];

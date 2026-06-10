@@ -7,7 +7,11 @@
   <title>NxLife'Toon</title>
 
   <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+
+  
 </head>
 
 <body>
@@ -20,14 +24,14 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#featured">หนังสือแนะนำ</a>
-        <a href="#rooms">ห้องหนังสือ</a>
+        <a href="#featured">☕ โต๊ะกาแฟ</a>
+        <a href="#rooms">📚 ตู้หนังสือ</a>
       </nav>
     </header>
 
     <section class="home-house">
       <div class="house-copy">
-        <div class="eyebrow">🏡 บ้านแห่งเรื่องราว</div>
+        <div class="eyebrow zone-label living-room-label">🏡 ห้องรับแขก</div>
 
         <h1>
           ยินดีต้อนรับ<br>
@@ -40,8 +44,8 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="#featured" class="primary-button">เปิดหนังสือแนะนำ</a>
-          <a href="#rooms" class="ghost-button">เดินดูห้องหนังสือ</a>
+          <a href="#featured" class="primary-button">ดูเรื่องราวแนะนำ บนโต๊ะกาแฟ</a>
+          <a href="#rooms" class="ghost-button">เดินเลือกตู้หนังสือเอง</a>
         </div>
       </div>
 
@@ -56,25 +60,78 @@
       </div>
     </section>
 
-    <section class="featured-section" id="featured">
-      <div class="section-title">
-        <p>Featured Book</p>
-        <h2>หนังสือแนะนำบนโต๊ะกลาง</h2>
-        <span>ตอนล่าสุด / ตอนที่อยากชวนเริ่มอ่านก่อน</span>
-      </div>
+<section class="featured-section coffee-zone" id="featured">
+  <div class="section-title">
+    <div>
+      <p class="zone-label coffee-label">☕ โต๊ะกาแฟ</p>
+      <h2>เรื่องราวแนะนำ</h2>
+      <span class="section-desc">
+        เรื่องราวที่อยากชวนหยิบขึ้นมาอ่านก่อน
+      </span>
+    </div>
+  </div>
 
-      <div id="featuredBooks" class="featured-books"></div>
-    </section>
+  <div id="featuredBooks"></div>
+</section>
 
-    <section class="rooms-section" id="rooms">
-      <div class="section-title">
-        <p>Rooms</p>
-        <h2>เลือกห้องหนังสือ</h2>
-        <span>แต่ละห้องจะพาไปเจอเรื่องราวคนละมุมของบ้าน NxLife</span>
-      </div>
+<section class="rooms-section bookshelf-zone" id="rooms">
+  <div class="section-title">
+    <div>
+      <p class="zone-label bookshelf-label">📚 ตู้หนังสือ</p>
+      <h2>เลือกตู้หนังสือที่สนใจ</h2>
+      <span class="section-desc">
+        เปิดตู้ แล้วเลือกหมวดที่อยากเข้าไปอ่าน
+      </span>
+    </div>
+  </div>
 
-      <div id="roomGrid" class="room-grid"></div>
-    </section>
+  <div id="roomGrid" class="room-grid"></div>
+</section>
+<section class="shelves-section shelf-zone hidden" id="shelvesView">
+  <div class="section-title">
+    <div>
+      <p class="breadcrumb" id="shelfBreadcrumb">
+        🏡 ห้องรับแขก / 📚 ตู้หนังสือ
+      </p>
+
+      <p class="zone-label shelf-label">🪜 ชั้นวาง</p>
+      <h2 id="selectedRoomTitle">ชื่อหมวด</h2>
+
+      <span class="section-desc">
+        เลือกชั้นวางที่อยากเปิดดูต่อ
+      </span>
+    </div>
+
+    <button class="back-home-button" onclick="backToRooms()">
+      ← กลับไปที่ตู้หนังสือ
+    </button>
+  </div>
+
+  <div id="shelfGrid" class="shelf-grid"></div>
+</section>
+
+<section class="stories-section stories-zone hidden" id="storiesView">
+  <div class="section-title">
+    <div>
+      <p class="breadcrumb" id="storyBreadcrumb">
+        🏡 ห้องรับแขก / 📚 ตู้หนังสือ / 🪜 ชั้นวาง
+      </p>
+
+      <p class="zone-label story-label">📖 เรื่องราว</p>
+      <h2 id="selectedShelfTitle">ชื่อชั้นวาง</h2>
+
+      <span class="section-desc">
+        เลือกเรื่องราวที่อยากอ่าน แล้วเริ่มเปิดตอนนั้นได้เลย
+      </span>
+    </div>
+
+    <button class="back-home-button" onclick="backToShelves()">
+      ← กลับไปที่ชั้นวาง
+    </button>
+  </div>
+
+  <div id="storyGrid" class="story-grid"></div>
+</section>
 
   </main>
 

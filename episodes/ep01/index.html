@@ -8,25 +8,116 @@
 
   <link rel="icon" type="image/png" href="../../assets/logo/favicon.png">
   <link rel="stylesheet" href="../../style.css">
+
+  <style>
+  /* ================================
+     Reader Page
+     CSS สำหรับหน้าอ่านการ์ตูน EP01
+     ใช้จัดหน้าอ่านและปุ่มกลับด้านล่าง
+  ================================ */
+
+  .reader-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff7ed;
+  }
+
+  .reader-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 34px 16px 52px;
+  }
+
+  .reader-back-button,
+  .reader-home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-family: "Prompt", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .reader-back-button {
+    background: #fff7ed;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+  }
+
+  .reader-home-button {
+    background: #f97316;
+    color: #ffffff;
+    border: 1px solid #f97316;
+  }
+
+  .reader-back-button:hover,
+  .reader-home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(120, 53, 15, 0.16);
+  }
+
+.back-link {
+  border: none;
+  background: transparent;
+  color: #c2410c;
+  font-family: "Prompt", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+</style>
+
 </head>
 
 <body class="reader-page">
 
   <header class="reader-header">
-    <a href="../../index.html" class="back-link">← กลับหน้าแรก</a>
+
+<a href="../../index.html#shelf=know-nxlife" class="back-link">
+  ← กลับไปที่ชั้นวาง
+</a>
+
     <div class="episode-label">EP01</div>
     <h1>NxLife คืออะไรกันแน่?</h1>
   </header>
 
-  <main class="webtoon-reader" id="webtoonReader"></main>
+<main class="reader-page">
+
+  <div class="webtoon-reader" id="webtoonReader"></div>
+
+  <div class="reader-actions">
+<a href="../../index.html#shelf=know-nxlife" class="reader-back-button">
+  ← กลับไปที่ชั้นวาง
+</a>
+
+    <a href="../../index.html" class="reader-home-button">
+      🏡 กลับห้องรับแขก
+    </a>
+  </div>
+
+</main>
 
   <section class="episode-end">
     <h2>อ่านจบแล้ว 🎉</h2>
     <p>ขอบคุณที่ร่วมเดินทางไปกับ NxLife'Toon</p>
 
-    <a href="../../index.html" class="read-button">
-      กลับไปเลือกตอน
-    </a>
+<a href="../../index.html#rooms" class="reader-back-button">
+  ← กลับไปเลือกตู้หนังสือ
+</a>
   </section>
 
   <script>
