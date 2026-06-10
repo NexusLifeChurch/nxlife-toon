@@ -15,7 +15,7 @@ if (featuredBooks) {
   featuredBooks.innerHTML = featuredEpisodes
     .map((episode) => {
       return `
-        <a href="${episode.url}" class="featured-book-card">
+        <a href="reader.html?ep=${episode.id}" class="featured-book-card">
           <div class="featured-cover">
             <img src="${episode.cover}" alt="${episode.ep} ${episode.title}">
           </div>
@@ -102,7 +102,7 @@ const shelfBreadcrumb = document.getElementById("shelfBreadcrumb");
 const selectedRoomTitle = document.getElementById("selectedRoomTitle");
   const shelfGrid = document.getElementById("shelfGrid");
 
-shelfBreadcrumb.textContent = `🏡 ห้องรับแขก / 📚 ตู้หนังสือ / ${room.title}`;
+shelfBreadcrumb.textContent = `🏡ห้องรับแขก › 📚ตู้หนังสือ: ${room.title}`;
 selectedRoomTitle.textContent = room.title;
 
   const roomShelves = shelves
@@ -172,7 +172,7 @@ function openShelf(shelfId) {
   const selectedShelfTitle = document.getElementById("selectedShelfTitle");
   const storyGrid = document.getElementById("storyGrid");
 
-  storyBreadcrumb.textContent = `🏡 ห้องรับแขก / 📚 ตู้หนังสือ / ${room ? room.title : ""} / 🪜 ${shelf.title}`;
+  storyBreadcrumb.textContent = `🏡ห้องรับแขก › 📚ตู้หนังสือ: ${room ? room.title : ""} › 📙ชั้นวาง: ${shelf.title}`;
   selectedShelfTitle.textContent = shelf.title;
 
   const shelfStories = episodes
@@ -196,7 +196,7 @@ function openShelf(shelfId) {
       return `
         ${
           isAvailable
-            ? `<a href="${episode.url}" class="story-card">`
+            ? `<a href="reader.html?ep=${episode.id}" class="story-card">`
             : `<article class="story-card coming-soon">`
         }
 

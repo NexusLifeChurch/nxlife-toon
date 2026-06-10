@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NxLife'Toon Reader</title>
+
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ================================
+       Reader Page
+       หน้าอ่านกลางของ NxLife'Toon
+    ================================ */
+
+    body {
+      margin: 0;
+      background: #fff7ed;
+      font-family: "Noto Sans Thai", sans-serif;
+      color: #431407;
+    }
+
+    .reader-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 18px;
+      background: rgba(255, 247, 237, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #fed7aa;
+    }
+
+    .reader-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .reader-ep-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f97316;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .reader-header {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 18px 20px;
+      text-align: center;
+    }
+
+    .reader-header h1 {
+      margin: 10px 0 8px;
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.2;
+      font-weight: 900;
+      color: #431407;
+    }
+
+    .reader-header p {
+      margin: 0 auto;
+      max-width: 680px;
+      color: #7c2d12;
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .webtoon-reader {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+
+    .webtoon-reader img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .reader-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 34px 16px 52px;
+    }
+
+    .reader-back-button,
+    .reader-home-button,
+    .reader-bookshelf-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-family: "Noto Sans Thai", sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .reader-back-button {
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+    }
+
+    .reader-bookshelf-button {
+      background: #ffffff;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+
+    .reader-home-button {
+      background: #f97316;
+      color: #ffffff;
+      border: 1px solid #f97316;
+    }
+
+    .reader-back-button:hover,
+    .reader-home-button:hover,
+    .reader-bookshelf-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(120, 53, 15, 0.16);
+    }
+
+    .reader-error {
+      max-width: 720px;
+      margin: 80px auto;
+      padding: 30px;
+      border-radius: 28px;
+      background: #ffffff;
+      text-align: center;
+      border: 1px solid #fed7aa;
+      box-shadow: 0 20px 40px rgba(120, 53, 15, 0.12);
+    }
+
+    .reader-error h1 {
+      margin: 0 0 10px;
+      color: #431407;
+    }
+
+    .reader-error p {
+      color: #7c2d12;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="reader-topbar">
+    <a href="index.html" id="topBackLink" class="reader-back-link">
+      ← กลับไปที่ชั้นวาง
+    </a>
+
+    <span id="readerEpBadge" class="reader-ep-badge">
+      EP
+    </span>
+  </header>
+
+  <section class="reader-header" id="readerHeader">
+    <h1 id="readerTitle">กำลังโหลดเรื่องราว...</h1>
+    <p id="readerDescription"></p>
+  </section>
+
+  <main class="webtoon-reader" id="webtoonReader"></main>
+
+  <div class="reader-actions" id="readerActions">
+    <a href="index.html" id="bottomShelfLink" class="reader-back-button">
+      ← กลับไปที่ชั้นวาง
+    </a>
+
+    <a href="index.html#rooms" class="reader-bookshelf-button">
+      📚 กลับไปเลือกตู้หนังสือ
+    </a>
+
+    <a href="index.html" class="reader-home-button">
+      🏡 กลับห้องรับแขก
+    </a>
+  </div>
+
+  <script src="episodes-data.js"></script>
+
+  <script>
+    // ================================
+    // NxLife'Toon Reader
+    // อ่านค่า ep จาก URL เช่น reader.html?ep=ep01
+    // ================================
+
+    const params = new URLSearchParams(window.location.search);
+    const epId = params.get("ep");
+
+    const episode = episodes.find((item) => item.id === epId);
+
+    const readerTitle = document.getElementById("readerTitle");
+    const readerDescription = document.getElementById("readerDescription");
+    const readerEpBadge = document.getElementById("readerEpBadge");
+    const webtoonReader = document.getElementById("webtoonReader");
+    const topBackLink = document.getElementById("topBackLink");
+    const bottomShelfLink = document.getElementById("bottomShelfLink");
+
+    if (!episode || episode.status !== "available") {
+      document.body.innerHTML = `
+        <div class="reader-error">
+          <h1>ไม่พบเรื่องราวนี้</h1>
+          <p>เรื่องราวนี้อาจยังไม่เปิดให้อ่าน หรือถูกย้ายไปแล้ว</p>
+          <a href="index.html" class="reader-home-button">🏡 กลับห้องรับแขก</a>
+        </div>
+      `;
+    } else {
+      document.title = `${episode.ep}: ${episode.title} | NxLife'Toon`;
+
+      readerTitle.textContent = episode.title;
+      readerDescription.textContent = episode.description;
+      readerEpBadge.textContent = episode.ep;
+
+      const shelfLink = `index.html#shelf=${episode.shelfId}`;
+
+      topBackLink.href = shelfLink;
+      bottomShelfLink.href = shelfLink;
+
+      const images = [];
+
+      for (let i = 1; i <= episode.totalImages; i++) {
+        const imageNumber = String(i).padStart(2, "0");
+        images.push(`
+          <img 
+            src="${episode.imageFolder}${imageNumber}.jpg" 
+            alt="${episode.ep} หน้า ${imageNumber}"
+            loading="lazy"
+          >
+        `);
+      }
+
+      webtoonReader.innerHTML = images.join("");
+    }
+  </script>
+
+</body>
+</html>
