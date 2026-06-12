@@ -1304,3 +1304,194 @@ body {
     grid-template-columns: 300px 1fr;
   }
 }
+
+/* ================================
+   MOBILE REFINEMENT
+   ลดความหนา/ความใหญ่บนมือถือ
+================================ */
+
+@media (max-width: 700px) {
+
+  /* ---------- Top Nav ให้เตี้ยและเบาขึ้น ---------- */
+
+  .top-nav {
+    position: sticky;
+    top: 8px;
+    width: calc(100% - 28px);
+    margin: 8px auto 14px;
+    padding: 8px 10px;
+    border-radius: 24px;
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 7px;
+    font-size: 18px;
+  }
+
+  .brand img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-links a {
+    padding: 7px 9px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  /* ซ่อนข้อความเมนูยาวบนมือถือบางส่วน */
+  .nav-links a {
+    max-width: 78px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+
+  /* ---------- ลดกรอบซ้อน / ลด padding ของ section ---------- */
+
+  .home-house,
+  .featured-section,
+  .rooms-section,
+  .shelves-section,
+  .stories-section {
+    margin: 14px auto;
+    padding: 18px 14px;
+    border-radius: 26px;
+    box-shadow: 0 14px 34px rgba(120, 53, 15, 0.09);
+  }
+
+  .house-copy {
+    padding: 26px 20px;
+    border-radius: 26px;
+  }
+
+  .house-copy::before {
+    width: 140px;
+    height: 140px;
+    right: -48px;
+    top: -42px;
+    opacity: 0.55;
+  }
+
+  .house-copy::after {
+    display: none;
+  }
+
+
+  /* ---------- หัวข้อบนมือถือไม่ใหญ่เกิน ---------- */
+
+  .house-copy h1,
+  .home-house h1 {
+    font-size: clamp(36px, 11vw, 52px);
+    line-height: 1.12;
+  }
+
+  .section-title h2 {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.18;
+  }
+
+
+  /* ---------- โต๊ะกาแฟ / การ์ดเรื่องแนะนำ ---------- */
+
+  .featured-book-card {
+    padding: 14px;
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(120, 53, 15, 0.09);
+  }
+
+  .featured-cover {
+    max-width: 250px;
+  }
+
+  .featured-info {
+    padding: 4px 2px;
+  }
+
+  .book-status {
+    margin-bottom: 8px;
+    padding: 6px 11px;
+    font-size: 13px;
+  }
+
+  .book-room {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  .featured-info h3 {
+    font-size: clamp(28px, 8.2vw, 38px);
+    line-height: 1.2;
+    margin: 8px 0 10px;
+  }
+
+  .featured-info p {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+
+  /* ---------- ลดความเฟ้อของ tag สนุก/จอย ---------- */
+
+  .story-meta {
+    gap: 7px;
+    margin-top: 12px;
+  }
+
+  .story-meta span {
+    padding: 6px 10px;
+    font-size: 13px;
+    line-height: 1.25;
+    border-radius: 999px;
+  }
+
+  /* ถ้าต้องการให้ meta ไม่เด่นเกิน */
+  .story-meta span {
+    background: #fffaf3;
+    color: #9a3412;
+  }
+
+
+  /* ---------- ปุ่มเปิดอ่าน ลดขนาดลง ---------- */
+
+  .read-now,
+  .read-button,
+  .primary-button,
+  .ghost-button {
+    min-height: 44px;
+    padding: 11px 18px;
+    font-size: 16px;
+    border-radius: 999px;
+  }
+
+  .featured-info .read-now {
+    margin-top: 8px;
+    font-size: 17px;
+    padding: 12px 20px;
+  }
+
+
+  /* ---------- coffee-note ให้เบาลง ---------- */
+
+  .coffee-note {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 18px;
+  }
+
+  .coffee-note strong {
+    font-size: 14px;
+  }
+
+  .coffee-note p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+}

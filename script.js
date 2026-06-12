@@ -34,7 +34,7 @@ if (featuredBooks) {
 
 <div class="story-meta">
   <span>📖 สนุกได้สาระ</span>
-  <span>👥 ไปกับ ยัยจอย · ลุงปุ่ม · พี่แจ็ค</span>
+  <span>👥 ยัยจอย · ลุงปุ่ม · พี่แจ็ค</span>
 </div>
 
 <div class="coffee-note">
