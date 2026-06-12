@@ -98,12 +98,16 @@ function openRoom(roomId) {
 
   const roomsSection = document.getElementById("rooms");
   const shelvesView = document.getElementById("shelvesView");
-const shelfBreadcrumb = document.getElementById("shelfBreadcrumb");
-const selectedRoomTitle = document.getElementById("selectedRoomTitle");
+  const storiesView = document.getElementById("storiesView");
+  const shelfBreadcrumb = document.getElementById("shelfBreadcrumb");
+  const selectedRoomTitle = document.getElementById("selectedRoomTitle");
   const shelfGrid = document.getElementById("shelfGrid");
 
-shelfBreadcrumb.textContent = `🏡ห้องรับแขก › 📚ตู้หนังสือ: ${room.title}`;
-selectedRoomTitle.textContent = room.title;
+  document.body.classList.remove("story-mode");
+
+shelfBreadcrumb.textContent = `📙 ชั้นวาง:`;
+selectedRoomTitle.textContent = "";
+selectedRoomTitle.style.display = "none";
 
   const roomShelves = shelves
     .filter((shelf) => shelf.roomId === roomId)
@@ -132,7 +136,13 @@ selectedRoomTitle.textContent = room.title;
     })
     .join("");
 
+  if (storiesView) {
+    storiesView.classList.add("hidden");
+    storiesView.classList.add("screen-hidden");
+  }
+
   shelvesView.classList.remove("hidden");
+  shelvesView.classList.remove("screen-hidden");
 
   shelvesView.scrollIntoView({
     behavior: "smooth",
@@ -172,7 +182,7 @@ function openShelf(shelfId) {
   const selectedShelfTitle = document.getElementById("selectedShelfTitle");
   const storyGrid = document.getElementById("storyGrid");
 
-  storyBreadcrumb.textContent = `🏡ห้องรับแขก › 📚ตู้หนังสือ: ${room ? room.title : ""} › 📙ชั้นวาง: ${shelf.title}`;
+  storyBreadcrumb.textContent = `📚ตู้หนังสือ: ${room ? room.title : ""} › 📙ชั้นวาง: ${shelf.title}`;
   selectedShelfTitle.textContent = shelf.title;
 
   const shelfStories = episodes
@@ -232,26 +242,52 @@ function openShelf(shelfId) {
       .join("");
   }
 
-  storiesView.classList.remove("hidden");
-
-  storiesView.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+enterStoryScreen(shelfId);
 }
 
 
 // ---------- Back To Shelves ----------
 function backToShelves() {
+  const homeHouse = document.querySelector(".home-house");
+  const featuredSection = document.querySelector(".featured-section");
+  const roomsSection = document.querySelector(".rooms-section");
   const shelvesView = document.getElementById("shelvesView");
   const storiesView = document.getElementById("storiesView");
 
-  storiesView.classList.add("hidden");
+  // ออกจากโหมดหน้าเรื่องราว
+  document.body.classList.remove("story-mode");
 
-  shelvesView.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+  // เปิดหน้าเดิมกลับมา
+  if (homeHouse) {
+    homeHouse.classList.remove("screen-hidden");
+  }
+
+  if (featuredSection) {
+    featuredSection.classList.remove("screen-hidden");
+  }
+
+  if (roomsSection) {
+    roomsSection.classList.remove("screen-hidden");
+  }
+
+  // ซ่อนหน้าเรื่องราว
+  if (storiesView) {
+    storiesView.classList.add("hidden");
+    storiesView.classList.add("screen-hidden");
+  }
+
+  // แสดงชั้นวาง
+  if (shelvesView) {
+    shelvesView.classList.remove("hidden");
+    shelvesView.classList.remove("screen-hidden");
+
+    shelvesView.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
+  window.location.hash = "shelves";
 }
 
 
@@ -276,3 +312,93 @@ window.addEventListener("load", () => {
     }, 250);
   }
 });
+
+function goToBookshelf() {
+  document.body.classList.remove("story-mode");
+
+  const homeHouse = document.querySelector(".home-house");
+  const featuredSection = document.querySelector(".featured-section");
+  const roomsSection = document.querySelector(".rooms-section");
+  const shelvesSection = document.querySelector(".shelves-section");
+  const storiesView = document.querySelector("#storiesView");
+
+  if (homeHouse) homeHouse.classList.remove("screen-hidden");
+  if (featuredSection) featuredSection.classList.remove("screen-hidden");
+  if (roomsSection) roomsSection.classList.remove("screen-hidden");
+
+  if (shelvesSection) {
+    shelvesSection.classList.add("hidden");
+    shelvesSection.classList.add("screen-hidden");
+  }
+
+  if (storiesView) {
+    storiesView.classList.add("hidden");
+    storiesView.classList.add("screen-hidden");
+  }
+
+  window.location.hash = "rooms";
+
+  if (roomsSection) {
+    roomsSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+}
+
+function goHome() {
+  document.body.classList.remove("story-mode");
+
+  const homeHouse = document.querySelector(".home-house");
+  const featuredSection = document.querySelector(".featured-section");
+  const roomsSection = document.querySelector(".rooms-section");
+  const shelvesSection = document.querySelector(".shelves-section");
+  const storiesView = document.querySelector("#storiesView");
+
+  if (homeHouse) homeHouse.classList.remove("screen-hidden");
+  if (featuredSection) featuredSection.classList.remove("screen-hidden");
+  if (roomsSection) roomsSection.classList.remove("screen-hidden");
+
+  if (shelvesSection) {
+    shelvesSection.classList.add("hidden");
+    shelvesSection.classList.add("screen-hidden");
+  }
+
+  if (storiesView) {
+    storiesView.classList.add("hidden");
+    storiesView.classList.add("screen-hidden");
+  }
+
+  window.location.hash = "";
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function enterStoryScreen(shelfId) {
+  const homeHouse = document.querySelector(".home-house");
+  const featuredSection = document.querySelector(".featured-section");
+  const roomsSection = document.querySelector(".rooms-section");
+  const shelvesSection = document.querySelector(".shelves-section");
+  const storiesView = document.querySelector("#storiesView");
+
+  document.body.classList.add("story-mode");
+
+  if (homeHouse) homeHouse.classList.add("screen-hidden");
+  if (featuredSection) featuredSection.classList.add("screen-hidden");
+  if (roomsSection) roomsSection.classList.add("screen-hidden");
+  if (shelvesSection) shelvesSection.classList.add("screen-hidden");
+
+  if (storiesView) {
+    storiesView.classList.remove("hidden");
+    storiesView.classList.remove("screen-hidden");
+  }
+
+  window.location.hash = `stories=${shelfId}`;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}

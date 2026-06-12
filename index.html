@@ -20,7 +20,6 @@
     <header class="top-nav">
       <a href="index.html" class="brand">
         <img src="assets/logo/favicon.png" alt="NxLife Logo">
-        <span>NxLife'Toon</span>
       </a>
 
       <nav class="nav-links">
@@ -34,8 +33,8 @@
         <div class="eyebrow zone-label living-room-label">🏡 ห้องรับแขก</div>
 
         <h1>
-          ยินดีต้อนรับ<br>
-          สู่บ้าน NxLife'Toon
+          Welcome to<br>
+          NxLife'Toon
         </h1>
 
         <p>
@@ -43,10 +42,7 @@
           ผ่านหนังสือการ์ตูนที่อ่านง่าย อบอุ่น และชวนยิ้ม
         </p>
 
-        <div class="hero-buttons">
-          <a href="#featured" class="primary-button">☕ ไปที่โต๊ะกาแฟ</a>
-          <a href="#rooms" class="ghost-button">📚 เดินเลือกตู้หนังสือเอง</a>
-        </div>
+
       </div>
 
       <div class="house-visual">
@@ -75,14 +71,18 @@
 </section>
 
 <section class="rooms-section bookshelf-zone" id="rooms">
-  <div class="section-title">
+ <div class="section-title">
     <div>
-      <p class="zone-label bookshelf-label">📚 ตู้หนังสือ</p>
+      <div class="zone-label bookshelf-label">📚 ตู้หนังสือ</div>
       <h2>เลือกตู้หนังสือที่สนใจ</h2>
-      <span class="section-desc">
-        เปิดตู้ แล้วเลือกหมวดที่อยากเข้าไปอ่าน
-      </span>
+      <p class="section-desc">เปิดตู้ แล้วเลือกหมวดที่อยากเข้าไปอ่าน</p>
+      <p class="swipe-hint">← ปัดซ้ายขวาเพื่อเลือกตู้หนังสือ →</p>
     </div>
+  </div>
+
+  <div class="room-grid" id="roomGrid">
+    <!-- การ์ดตู้หนังสือของคุณอยู่ตรงนี้ -->
+  </div>
   </div>
 
   <div id="roomGrid" class="room-grid"></div>
@@ -94,23 +94,22 @@
         🏡 ห้องรับแขก › 📚 ตู้หนังสือ
       </p>
 
-      <p class="zone-label shelf-label">📙 ชั้นวาง:</p>
+<!-- <p class="zone-label shelf-label">📙 ชั้นวาง:</p> -->
       <h2 id="selectedRoomTitle">ชื่อหมวด</h2>
-
-      <span class="section-desc">
-        เลือกชั้นวางที่อยากเปิดดูต่อ
-      </span>
     </div>
-
-    <button class="back-home-button" onclick="backToRooms()">
-      ← กลับไปที่ตู้หนังสือ
-    </button>
   </div>
 
   <div id="shelfGrid" class="shelf-grid"></div>
 </section>
 
 <section class="stories-section stories-zone hidden" id="storiesView">
+
+  <div class="story-topbar">
+    <button type="button" onclick="backToShelves()">← ชั้นวาง</button>
+    <button type="button" onclick="goToBookshelf()">📚 ตู้หนังสือ</button>
+    <button type="button" onclick="goHome()">🏡 หน้าแรก</button>
+  </div>
+
   <div class="section-title">
     <div>
       <p class="breadcrumb" id="storyBreadcrumb">
@@ -118,16 +117,15 @@
       </p>
 
       <p class="zone-label story-label">📖 เรื่องราว</p>
+
       <h2 id="selectedShelfTitle">ชื่อชั้นวาง</h2>
 
       <span class="section-desc">
         เลือกเรื่องราวที่อยากอ่าน แล้วเริ่มเปิดตอนนั้นได้เลย
       </span>
-    </div>
 
-    <button class="back-home-button" onclick="backToShelves()">
-      ← กลับไปที่ชั้นวาง
-    </button>
+      <p class="story-swipe-hint">ปัดเพื่อดูเรื่องราวเพิ่มเติม →</p>
+    </div>
   </div>
 
   <div id="storyGrid" class="story-grid"></div>

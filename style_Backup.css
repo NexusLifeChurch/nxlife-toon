@@ -1,0 +1,2257 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans Thai", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(251, 146, 60, 0.24), transparent 28%),
+    radial-gradient(circle at top right, rgba(251, 207, 232, 0.5), transparent 24%),
+    linear-gradient(180deg, #fff7ed 0%, #fdebd3 100%);
+  color: #3b2f2f;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 18px 0 70px;
+}
+
+/* TOP NAV */
+
+.top-nav {
+  position: sticky;
+  top: 10px;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 28px rgba(120, 53, 15, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #9a3412;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-links a {
+  padding: 9px 13px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #6b4e3d;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  background: #ffedd5;
+}
+
+/* HOME HOUSE */
+
+.home-house {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+.home-house h1 {
+  font-family: "Mali", cursive;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.house-copy {
+  position: relative;
+  overflow: hidden;
+  border-radius: 36px;
+  padding: 44px;
+  background:
+    radial-gradient(circle at 16% 14%, rgba(255, 255, 255, 0.75), transparent 24%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 237, 213, 0.82));
+  box-shadow: 0 22px 55px rgba(120, 53, 15, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+}
+
+.house-copy::before {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -60px;
+  top: -55px;
+  border-radius: 50%;
+  background: #fbcfe8;
+  opacity: 0.8;
+}
+
+.house-copy::after {
+  content: "✦";
+  position: absolute;
+  right: 62px;
+  bottom: 52px;
+  font-size: 72px;
+  color: rgba(249, 115, 22, 0.22);
+}
+
+.eyebrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #c2410c;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 10px 22px rgba(120, 53, 15, 0.08);
+}
+
+.house-copy h1 {
+  position: relative;
+  z-index: 1;
+  margin: 28px 0 16px;
+  font-size: clamp(40px, 5.6vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: #7c2d12;
+}
+
+.house-copy p {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0;
+  color: #6b4e3d;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.primary-button,
+.ghost-button,
+.read-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.primary-button,
+.read-button {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.28);
+}
+
+.ghost-button {
+  background: #ffffff;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+}
+
+.house-visual {
+  min-height: 440px;
+  border-radius: 34px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 237, 213, 0.22), transparent 30%),
+    radial-gradient(circle at 90% 90%, rgba(253, 186, 116, 0.22), transparent 32%),
+    linear-gradient(135deg, #3b2114, #5a2d16);
+  box-shadow: 0 24px 60px rgba(75, 32, 8, 0.22);
+  color: #fff7ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.house-visual:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 72px rgba(75, 32, 8, 0.28);
+}
+
+.house-window {
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff7ed;
+  padding: 8px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55),
+    0 12px 26px rgba(43, 26, 18, 0.2);
+}
+
+.house-window img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.house-visual:hover .house-window img {
+  transform: scale(1.025);
+  filter: brightness(1.03);
+}
+
+.house-note {
+  align-self: center;
+  max-width: 390px;
+  padding: 13px 22px;
+  border-radius: 24px;
+  background: rgba(255, 247, 237, 0.18);
+  border: 1px solid rgba(255, 247, 237, 0.22);
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1.55;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(43, 26, 18, 0.15);
+}
+/* SECTION COMMON */
+
+.featured-section,
+.rooms-section {
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 20px 50px rgba(120, 53, 15, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+}
+
+.section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.section-title p {
+  margin: 0 0 6px;
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 34px;
+  color: #7c2d12;
+}
+
+.section-title span {
+  color: #7c5c48;
+  font-weight: 800;
+  max-width: 360px;
+  text-align: right;
+}
+
+/* FEATURED BOOK */
+
+.featured-books {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.featured-book-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  padding: 18px;
+  border-radius: 30px;
+  background: #ffffff;
+  text-decoration: none;
+  border: 1px solid #fee2c0;
+  box-shadow: 0 16px 36px rgba(120, 53, 15, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featured-book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 52px rgba(120, 53, 15, 0.18);
+}
+
+.featured-cover {
+  overflow: hidden;
+  border-radius: 24px;
+  min-height: 360px;
+  background: #fed7aa;
+}
+
+.featured-cover img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-info {
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-status {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.book-room {
+  margin: 0 0 8px;
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.featured-info h3 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  line-height: 1.25;
+  color: #3b2f2f;
+}
+
+.featured-info p {
+  margin: 0 0 18px;
+  color: #6b4e3d;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.read-now {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #f97316;
+  color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 10px 22px rgba(249, 115, 22, 0.25);
+}
+
+/* ROOMS */
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.room-card {
+  position: relative;
+  min-height: 210px;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 30%),
+    linear-gradient(135deg, #fff7ed, #fed7aa);
+  border: 1px solid #fee2c0;
+  box-shadow: 0 14px 30px rgba(120, 53, 15, 0.1);
+}
+
+.room-card::after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  right: -28px;
+  bottom: -28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.room-card.available {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 30%),
+    linear-gradient(135deg, #fb923c, #f97316 55%, #facc15);
+  color: #ffffff;
+}
+
+.room-card.coming-soon {
+  opacity: 0.86;
+}
+
+.room-emoji {
+  position: relative;
+  z-index: 1;
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.room-info {
+  position: relative;
+  z-index: 1;
+}
+
+.room-info h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.room-info p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.room-button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #9a3412;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.room-disabled {
+  display: inline-block;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* READER PAGE - KEEP */
+
+.reader-page {
+  background: #fff7ed;
+  padding: 0;
+}
+
+.reader-header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 18px 16px 22px;
+  text-align: center;
+  background: #fff7ed;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #c06428;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.episode-label {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #fed7aa;
+  color: #9a3412;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.reader-header h1 {
+  margin: 12px 0 0;
+  font-size: 26px;
+  color: #3b2f2f;
+}
+
+.webtoon-reader {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.webtoon-reader img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.episode-end {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 36px 20px 56px;
+  text-align: center;
+  background: #fff7ed;
+}
+
+.episode-end h2 {
+  margin: 0 0 10px;
+  color: #c06428;
+}
+
+.episode-end p {
+  margin: 0 0 24px;
+  color: #5f4636;
+}
+
+/* SHELVES VIEW */
+
+.hidden {
+  display: none;
+}
+
+.shelves-section {
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 20px 50px rgba(120, 53, 15, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.back-home-button {
+  border: none;
+  padding: 11px 16px;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-weight: 900;
+  cursor: pointer;
+  border: 1px solid #fed7aa;
+}
+
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.shelf-card {
+  position: relative;
+  min-height: 230px;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.75), transparent 30%),
+    linear-gradient(135deg, #fff7ed, #fed7aa);
+  border: 1px solid #fee2c0;
+  box-shadow: 0 14px 30px rgba(120, 53, 15, 0.1);
+}
+
+.shelf-card::after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  right: -28px;
+  bottom: -28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.shelf-card.available {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 30%),
+    linear-gradient(135deg, #fb923c, #f97316 55%, #facc15);
+  color: #ffffff;
+}
+
+.shelf-card.coming-soon {
+  opacity: 0.86;
+}
+
+.shelf-emoji {
+  position: relative;
+  z-index: 1;
+  font-size: 44px;
+  margin-bottom: 16px;
+}
+
+.shelf-info {
+  position: relative;
+  z-index: 1;
+}
+
+.shelf-info h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.shelf-info p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.shelf-button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #9a3412;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.shelf-disabled {
+  display: inline-block;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+/* SECTION IDENTITY */
+
+.zone-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin: 0 0 8px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.section-desc {
+  display: block;
+  margin-top: 6px;
+  color: #7c2d12;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.living-room-label {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+}
+
+.coffee-label {
+  background: #fff4e6;
+  color: #7c2d12;
+  border: 1px solid #e7b77e;
+}
+
+.bookshelf-label {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.shelf-label {
+  background: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid #e9d5ff;
+}
+
+.coffee-zone {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.75), transparent 30%),
+    linear-gradient(135deg, #fff4e6, #f8dfc2);
+  border: 1px solid rgba(235, 196, 154, 0.65);
+}
+
+.bookshelf-zone {
+  background:
+    radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.78), transparent 30%),
+    linear-gradient(135deg, #ecfdf5, #dbeafe);
+  border: 1px solid rgba(167, 243, 208, 0.75);
+}
+
+.shelf-zone {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.78), transparent 30%),
+    linear-gradient(135deg, #faf5ff, #fef3c7);
+  border: 1px solid rgba(233, 213, 255, 0.8);
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 10px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #7c2d12;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(120, 53, 15, 0.08);
+}
+
+.story-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.story-meta span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid #fed7aa;
+}
+
+.coffee-note {
+  margin-top: 16px;
+  max-width: 420px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  border: 1px solid #fed7aa;
+  color: #7c2d12;
+}
+
+.coffee-note strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.coffee-note p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+/* COFFEE TABLE DECORATION */
+
+.featured-book-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title h2 {
+  font-family: "Noto Sans Thai", sans-serif;
+  font-weight: 800;
+}
+
+/* STORIES VIEW */
+
+.stories-section {
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 20px 50px rgba(120, 53, 15, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+}
+
+.stories-zone {
+  background:
+    radial-gradient(circle at 85% 8%, rgba(255, 255, 255, 0.78), transparent 30%),
+    linear-gradient(135deg, #ffffff, #fff7ed);
+  border: 1px solid rgba(254, 215, 170, 0.8);
+}
+
+.story-label {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.story-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.88);
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid rgba(254, 215, 170, 0.9);
+  box-shadow: 0 16px 34px rgba(120, 53, 15, 0.1);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(120, 53, 15, 0.16);
+}
+
+.story-card::after {
+  content: "📖";
+  position: absolute;
+  right: 34px;
+  top: 22px;
+  font-size: 72px;
+  opacity: 0.045;
+  pointer-events: none;
+}
+
+.story-cover {
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff7ed;
+  box-shadow: 0 12px 24px rgba(120, 53, 15, 0.14);
+}
+
+.story-cover img {
+  width: 100%;
+  display: block;
+}
+
+.story-info {
+  position: relative;
+  z-index: 1;
+}
+
+.story-room {
+  margin: 8px 0 0;
+  color: #9a3412;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.story-info h3 {
+  margin: 8px 0 10px;
+  font-size: 28px;
+  line-height: 1.25;
+  color: #431407;
+}
+
+.story-info p {
+  margin: 0 0 14px;
+  color: #7c2d12;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.empty-story {
+  padding: 40px 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.76);
+  text-align: center;
+  border: 1px dashed #fed7aa;
+}
+
+.empty-emoji {
+  font-size: 54px;
+  margin-bottom: 12px;
+}
+
+.empty-story h3 {
+  margin: 0 0 8px;
+  color: #431407;
+  font-size: 24px;
+}
+
+.empty-story p {
+  margin: 0;
+  color: #7c2d12;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .story-card {
+    grid-template-columns: 1fr;
+  }
+
+  .story-info h3 {
+    font-size: 23px;
+  }
+}
+
+.story-card.coming-soon {
+  opacity: 0.74;
+  cursor: default;
+}
+
+.story-card.coming-soon:hover {
+  transform: none;
+  box-shadow: 0 16px 34px rgba(120, 53, 15, 0.1);
+}
+
+.read-now.disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ================================
+   RESPONSIVE CORE V2
+   Mobile-first cleanup
+   ใช้คุม Layout หลักให้รองรับมือถือแนวตั้งก่อน
+================================ */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Section alignment */
+.section-title {
+  display: block;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.section-title > div,
+.section-title h2,
+.section-desc {
+  text-align: left;
+}
+
+.section-title h2 {
+  margin: 8px 0 8px;
+  font-size: clamp(28px, 7vw, 42px);
+  line-height: 1.18;
+}
+
+.section-desc {
+  max-width: 640px;
+  margin: 0;
+}
+
+.breadcrumb {
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* Mobile-first default */
+.home-house {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.featured-book-card,
+.story-card {
+  grid-template-columns: 1fr;
+}
+
+.room-grid,
+.shelf-grid,
+.story-grid {
+  grid-template-columns: 1fr;
+}
+
+.shelf-card {
+  min-height: auto;
+}
+
+/* Mobile portrait */
+@media (max-width: 700px) {
+  .app-shell {
+    width: min(100% - 18px, 1120px);
+    padding-top: 10px;
+  }
+
+  .top-nav {
+    top: 6px;
+    padding: 8px 10px;
+    border-radius: 22px;
+    align-items: center;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+  }
+
+  .brand img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-links {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    font-size: 12px;
+    padding: 7px 9px;
+    line-height: 1.15;
+  }
+
+  .home-house {
+    margin-bottom: 18px;
+  }
+
+  .house-copy {
+    padding: 24px 18px;
+    border-radius: 28px;
+  }
+
+  .house-copy::after {
+    display: none;
+  }
+
+  .house-copy h1 {
+    font-size: clamp(34px, 10vw, 42px);
+    line-height: 1.12;
+    margin: 18px 0 12px;
+    letter-spacing: -0.7px;
+  }
+
+  .house-copy p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .primary-button,
+  .ghost-button,
+  .read-button {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 16px;
+    font-size: 15px;
+  }
+
+  .house-visual {
+    min-height: auto;
+    padding: 12px;
+    border-radius: 28px;
+  }
+
+  .house-window {
+    padding: 6px;
+    border-radius: 22px;
+  }
+
+  .house-window img {
+    max-height: 230px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+  }
+
+  .house-note {
+    max-width: 100%;
+    padding: 10px 14px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .featured-section,
+  .rooms-section,
+  .shelves-section,
+  .stories-section {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .section-title {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .section-title span {
+    display: block;
+    max-width: 100%;
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  .zone-label,
+  .breadcrumb {
+    font-size: 13px;
+    line-height: 1.45;
+    padding: 6px 10px;
+  }
+
+  .featured-book-card {
+    gap: 16px;
+    padding: 16px;
+    border-radius: 26px;
+  }
+
+  .featured-cover,
+  .story-cover {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .featured-cover {
+    min-height: auto;
+  }
+
+  .featured-cover img {
+    min-height: auto;
+    border-radius: 22px;
+  }
+
+  .featured-info {
+    padding: 4px 0;
+  }
+
+  .featured-info h3 {
+    font-size: 23px;
+    line-height: 1.25;
+  }
+
+  .featured-info p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .story-meta {
+    gap: 7px;
+    margin-top: 14px;
+  }
+
+  .story-meta span {
+    font-size: 12px;
+    padding: 6px 9px;
+  }
+
+  .coffee-note {
+    max-width: 100%;
+    padding: 12px 14px;
+    border-radius: 18px;
+  }
+
+  .room-card {
+    min-height: auto;
+    padding: 18px;
+    border-radius: 26px;
+  }
+
+  .room-emoji {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .room-info h3 {
+    font-size: 22px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .room-info p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .shelf-card {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .shelf-emoji {
+    font-size: 36px;
+    margin: 0;
+  }
+
+  .shelf-info h3 {
+    font-size: 21px;
+    line-height: 1.25;
+    margin: 0 0 6px;
+  }
+
+  .shelf-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+  }
+
+  .shelf-button,
+  .shelf-disabled {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .story-card {
+    gap: 16px;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .story-info h3 {
+    font-size: 23px;
+    line-height: 1.28;
+  }
+
+  .story-info p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Tablet and desktop */
+@media (min-width: 701px) {
+  .section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .home-house {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
+    gap: 22px;
+  }
+
+  .featured-book-card {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .story-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .room-grid,
+  .shelf-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* Wide desktop */
+@media (min-width: 1100px) {
+  .room-grid,
+  .shelf-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .featured-book-card {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+/* ================================
+   MOBILE FLAT APP MODE V3
+   เอากรอบออก ทำให้หน้าโปร่งเหมือน App
+================================ */
+
+@media (max-width: 700px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 85% 8%, rgba(251, 207, 232, 0.45), transparent 28%),
+      linear-gradient(180deg, #fff7ed 0%, #fdebd3 100%);
+  }
+
+  .app-shell {
+    width: 100%;
+    padding: 84px 0 54px;
+  }
+
+  /* ---------- Top Nav แบบเบา ---------- */
+
+  .top-nav {
+    position: fixed;
+    top: calc(env(safe-area-inset-top) + 8px);
+    left: 12px;
+    right: 12px;
+    z-index: 999;
+    width: auto;
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 999px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 22px rgba(120, 53, 15, 0.10);
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 7px;
+    font-size: 0;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand::after {
+    content: "NxLife'Toon";
+    font-size: 18px;
+    font-weight: 900;
+    color: #9a3412;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .nav-links a {
+    min-height: 36px;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #7c2d12;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+
+  /* ---------- ทุก section เอากรอบนอกออก ---------- */
+
+  .home-house,
+  .featured-section,
+  .rooms-section,
+  .shelves-section,
+  .stories-section {
+    width: 100%;
+    margin: 0;
+    padding: 26px 22px;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+
+  /* ---------- ห้องรับแขกแบบแปะบนพื้น ---------- */
+
+  .home-house {
+    display: block;
+    min-height: auto;
+    padding-top: 18px;
+  }
+
+  .house-copy {
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .house-copy::before,
+  .house-copy::after {
+    display: none;
+  }
+
+  .eyebrow {
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid #fed7aa;
+    box-shadow: none;
+    font-size: 13px;
+  }
+
+  .house-copy h1,
+  .home-house h1 {
+    margin: 22px 0 14px;
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    color: #7c2d12;
+  }
+
+  .house-copy p,
+  .home-house p {
+    max-width: 100%;
+    margin: 0;
+    color: #6b4e3d;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .hero-buttons {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .primary-button,
+  .ghost-button {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 16px;
+  }
+
+  .primary-button {
+    box-shadow: 0 10px 22px rgba(249, 115, 22, 0.20);
+  }
+
+  .ghost-button {
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+
+  /* ---------- รูป Hero ให้เป็นภาพ ไม่ใช่กล่องหนัก ---------- */
+
+  .house-visual {
+    margin-top: 28px;
+    padding: 0;
+    min-height: auto;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .house-window {
+    padding: 0;
+    border-radius: 28px;
+    background: transparent;
+    box-shadow: 0 12px 26px rgba(120, 53, 15, 0.12);
+  }
+
+  .house-window img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 28px;
+  }
+
+  .house-note {
+    display: none;
+  }
+
+
+  /* ---------- Section Title ให้โปร่งขึ้น ---------- */
+
+  .section-title {
+    margin-bottom: 16px;
+  }
+
+  .zone-label,
+  .breadcrumb {
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: none;
+    font-size: 13px;
+  }
+
+  .section-title h2 {
+    font-size: clamp(27px, 8vw, 36px);
+    line-height: 1.18;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+
+  /* ---------- โต๊ะกาแฟ การ์ดเดียวพอ ---------- */
+
+  .featured-book-card {
+    padding: 14px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(254, 215, 170, 0.75);
+    box-shadow: 0 12px 28px rgba(120, 53, 15, 0.10);
+  }
+
+  .featured-cover {
+    max-width: 100%;
+    border-radius: 24px;
+  }
+
+  .featured-cover img {
+    border-radius: 24px;
+  }
+
+  .featured-info {
+    padding: 8px 2px 4px;
+  }
+
+  .book-status {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .book-room {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .featured-info h3 {
+    font-size: clamp(25px, 7.2vw, 34px);
+    line-height: 1.22;
+    margin: 8px 0 8px;
+  }
+
+  .featured-info p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .story-meta {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .story-meta span {
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.2;
+    background: #fffaf3;
+  }
+
+  .read-now {
+    min-height: 46px;
+    padding: 11px 18px;
+    font-size: 16px;
+    border-radius: 999px;
+  }
+
+
+  /* ---------- ตู้/ชั้น/เรื่องราว ---------- */
+
+  .room-grid,
+  .shelf-grid,
+  .story-grid {
+    gap: 12px;
+  }
+
+  .room-card,
+  .shelf-card,
+  .story-card,
+  .empty-story {
+    border-radius: 24px;
+    box-shadow: 0 10px 24px rgba(120, 53, 15, 0.08);
+  }
+
+  .shelf-card {
+    grid-template-columns: 50px 1fr;
+    padding: 14px;
+  }
+
+  .shelf-emoji {
+    font-size: 34px;
+  }
+
+  .shelf-info h3 {
+    font-size: 20px;
+  }
+
+  .shelf-info p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .story-card {
+    padding: 14px;
+  }
+
+  .story-info h3 {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .story-info p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
+
+/* ================================
+   MOBILE NAV + HERO TIGHTEN
+   แก้เมนูหาย / ลดความแน่น Hero
+================================ */
+
+@media (max-width: 700px) {
+
+  /* ---------- Top Nav: เหลือโลโก้ + 2 ปุ่ม ---------- */
+
+  .top-nav {
+    left: 14px;
+    right: 14px;
+    padding: 8px 10px;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+  }
+
+  .brand {
+    width: 52px;
+    min-width: 52px;
+    flex: 0 0 52px;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  /* ซ่อนชื่อ NxLife'Toon ในเมนูบน */
+  .brand span {
+    display: none !important;
+  }
+
+  .brand::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .nav-links a {
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 8px 10px;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+
+  /* ---------- Hero: ลดความสูง / ลดระยะบรรทัด ---------- */
+
+  .house-copy h1,
+  .home-house h1 {
+    font-size: clamp(32px, 9vw, 44px);
+    line-height: 1.04;
+    margin: 20px 0 14px;
+    letter-spacing: -0.6px;
+  }
+
+  .house-copy p,
+  .home-house p {
+    font-size: 15.5px;
+    line-height: 1.58;
+  }
+
+  .hero-buttons {
+    margin-top: 22px;
+    gap: 10px;
+  }
+
+  .primary-button,
+  .ghost-button {
+    min-height: 48px;
+    font-size: 15.5px;
+    padding: 11px 16px;
+  }
+}
+
+/* ================================
+   MOBILE TOP BAR - FLAT RECTANGLE
+================================ */
+
+@media (max-width: 700px) {
+
+  /* ให้เนื้อหาไม่โดน bar ทับ */
+  .app-shell {
+    padding-top: 76px;
+  }
+
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    width: 100%;
+    margin: 0;
+    padding: calc(env(safe-area-inset-top) + 10px) 14px 10px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .brand img {
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  /* ถ้าอยากซ่อนชื่อ เหลือแต่โลโก้ */
+  .brand span {
+    display: none !important;
+  }
+
+  .brand::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .nav-links a {
+    min-height: 36px;
+    padding: 8px 12px;
+    border-radius: 10px; /* ปุ่มย่อยยังมนได้นิดเดียว */
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #7c2d12;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+/* ================================
+   MOBILE TOP NAV FINAL
+   Logo + Coffee + Bookshelf
+================================ */
+
+@media (max-width: 700px) {
+
+  .app-shell {
+    padding-top: 72px;
+  }
+
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    width: 100%;
+    margin: 0;
+    padding: calc(env(safe-area-inset-top) + 8px) 12px 8px;
+
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(254, 215, 170, 0.75);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 12px rgba(120, 53, 15, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .brand {
+    width: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+  }
+
+  .brand img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+  }
+
+  .brand span,
+  .brand::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .nav-links {
+    min-width: 0;
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 38px;
+    padding: 8px 6px;
+
+    border-radius: 10px;
+    border: 1px solid #fed7aa;
+    background: #fff7ed;
+    color: #7c2d12;
+
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
+
+/* ================================
+   MOBILE ROOM SLIDER
+   ตู้หนังสือแบบสไลด์ซ้าย-ขวา
+================================ */
+
+.swipe-hint {
+  display: none;
+}
+
+@media (max-width: 700px) {
+
+  .bookshelf-zone {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .bookshelf-zone .section-title {
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-bottom: 14px;
+  }
+
+  .swipe-hint {
+    display: block;
+    margin: 8px 0 0;
+    color: #9a3412;
+    font-size: 13px;
+    font-weight: 800;
+    opacity: 0.72;
+  }
+
+  .room-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    grid-template-columns: none;
+    gap: 14px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 4px 22px 16px;
+    margin-top: 4px;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 22px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .room-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .room-card {
+    scroll-snap-align: start;
+    min-height: 220px;
+    width: 100%;
+  }
+
+  .room-card:last-child {
+    margin-right: 22px;
+  }
+}
+
+/* Desktop / Tablet ยังเป็น grid ปกติ */
+@media (min-width: 701px) {
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .room-card {
+    scroll-snap-align: none;
+  }
+}
+
+/* ================================
+   MOBILE STORY SLIDER
+   เรื่องราวแบบสไลด์ซ้าย-ขวา
+   ชั้นวางยังเป็นแนวตั้งเหมือนเดิม
+================================ */
+
+.story-swipe-hint {
+  display: none;
+}
+
+@media (max-width: 700px) {
+
+  .stories-zone {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .stories-zone .section-title {
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-bottom: 14px;
+  }
+
+  .story-swipe-hint {
+    display: block;
+    margin: 8px 0 0;
+    color: #9a3412;
+    font-size: 13px;
+    font-weight: 800;
+    opacity: 0.72;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    grid-template-columns: none;
+    gap: 14px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 4px 22px 18px;
+    margin-top: 4px;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 22px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .story-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-card {
+    scroll-snap-align: start;
+    width: 100%;
+    min-height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+  }
+
+  .story-card:last-child {
+    margin-right: 22px;
+  }
+
+  .story-cover {
+    width: 100%;
+    max-width: none;
+  }
+
+  .story-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .story-info h3 {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  .story-info p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* Tablet / Desktop ให้เรื่องราวกลับเป็น layout ปกติ */
+@media (min-width: 701px) {
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    overflow: visible;
+    padding: 0;
+  }
+
+  .story-card {
+    scroll-snap-align: none;
+  }
+}
+
+
+/* ================================
+   STORY TOPBAR
+   แถบเมนูบนของหน้าเลือกเรื่องราว
+================================ */
+
+.story-topbar {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .story-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+
+    margin: -22px -22px 18px;
+    padding: 10px 12px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(254, 215, 170, 0.85);
+    box-shadow: 0 2px 12px rgba(120, 53, 15, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .story-topbar button {
+    min-height: 38px;
+    padding: 8px 6px;
+
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+    background: #fff7ed;
+    color: #7c2d12;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+/* ================================
+   SCREEN STATE
+   ใช้ซ่อน section เมื่อต้องการเปลี่ยนเป็นหน้าจอเดียว
+================================ */
+
+.screen-hidden {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  body.story-mode {
+    background:
+      radial-gradient(circle at 90% 8%, rgba(251, 207, 232, 0.28), transparent 26%),
+      linear-gradient(180deg, #fffaf3 0%, #ffedd5 100%);
+  }
+}
+
+/* ================================
+   STORY MODE CLEANUP
+   ซ่อนเมนูหลักเมื่ออยู่หน้าเรื่องราว
+================================ */
+
+body.story-mode .top-nav {
+  display: none !important;
+}
+
+body.story-mode .app-shell {
+  padding-top: 0 !important;
+}
+
+/* ================================
+   STORY MODE CLEANUP
+   ซ่อนเมนูหลักเฉพาะหน้าเรื่องราว
+================================ */
+
+body.story-mode .top-nav {
+  display: none !important;
+}
+
+body.story-mode .app-shell {
+  padding-top: 0 !important;
+}
+
+/* =================================
+   STORY VIEW MOBILE FIX
+   ปรับหน้ารวมเรื่องราวบนมือถือ
+================================= */
+@media (max-width: 700px) {
+  .stories-section {
+    padding: 14px 16px 28px;
+  }
+
+  .stories-zone {
+    padding: 14px 16px 28px;
+  }
+
+  .stories-section .section-title,
+  .stories-zone .section-title {
+    margin-bottom: 14px;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .story-card {
+    display: block;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .story-cover {
+    width: 100%;
+    margin: 0 0 16px 0;
+  }
+
+  .story-cover img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  .story-info {
+    width: 100%;
+    padding: 0;
+  }
+
+  .story-info h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .story-info p {
+    margin-bottom: 12px;
+    line-height: 1.45;
+  }
+
+  .story-meta {
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .read-now {
+    display: inline-flex;
+    width: auto;
+    min-width: 0;
+  }
+}
