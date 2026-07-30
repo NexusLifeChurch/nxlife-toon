@@ -99,7 +99,7 @@ const episodes = [
     description: "ชวนรู้จัก NxLife แบบง่าย ๆ ผ่านยัยจอย เฮียปุ่ม และพี่แจ็ค",
     cover: "assets/covers/ep01-cover.jpg",
     imageFolder: "episodes/ep01/images/",
-    totalImages: 10,
+    totalImages: 17,
     status: "available",
     statusText: "พร้อมอ่าน",
     featured: true,
