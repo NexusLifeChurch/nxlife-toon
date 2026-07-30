@@ -97,7 +97,7 @@ const episodes = [
     roomId: "must-know",
     shelfId: "know-nxlife",
     description: "ชวนรู้จัก NxLife แบบง่าย ๆ ผ่านยัยจอย เฮียปุ่ม และพี่แจ็ค",
-    cover: "assets/covers/ep01-cover.jpg",
+    cover: "assets/covers/ep01-cover.webp",
     imageFolder: "episodes/ep01/images/",
     totalImages: 17,
     status: "available",
